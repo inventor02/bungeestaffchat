@@ -3,8 +3,8 @@ package me.inventor02.bungeestaffchat.commands;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
-import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
+import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
@@ -51,13 +51,10 @@ public class StaffChatCommand extends Command {
 
         for(ProxiedPlayer proxiedPlayer : ProxyServer.getInstance().getPlayers()) {
             if(proxiedPlayer.hasPermission("staffchat.staff")) {
-                ComponentBuilder message = new ComponentBuilder("Staff").color(ChatColor.GREEN).bold(true);
-                ComponentBuilder message2 = new ComponentBuilder(">>").color(ChatColor.BLUE).bold(true);
-                ComponentBuilder message3 = new ComponentBuilder(builder.toString().trim()).color(ChatColor.YELLOW);
+                TextComponent text1 = new TextComponent("[" + player.getServer().getInfo().getName() + "] " + player.getName() + ": " + builder.toString().trim());
+                text1.setColor(ChatColor.DARK_GREEN);
 
-                BaseComponent[] messageFinal = message.create();
-
-                messageFinal.
+                proxiedPlayer.sendMessage(text1);
             }
         }
     }
