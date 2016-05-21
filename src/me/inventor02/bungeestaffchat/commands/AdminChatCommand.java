@@ -26,7 +26,7 @@ public class AdminChatCommand extends Command {
 
         ProxiedPlayer player = (ProxiedPlayer) sender;
 
-        if(!(player.hasPermission("staffchat.admin"))) {
+        if(!(player.hasPermission("staffchat.admin") || player.hasPermission("*"))) {
             ComponentBuilder message = new ComponentBuilder("Insufficient permission. If you believe this is an error, contact inventor02.").color(ChatColor.RED);
 
             player.sendMessage(message.create());

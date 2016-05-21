@@ -27,7 +27,7 @@ public class StaffChatCommand extends Command {
 
         ProxiedPlayer player = (ProxiedPlayer) sender;
 
-        if(!(player.hasPermission("staffchat.staff"))) {
+        if(!(player.hasPermission("staffchat.staff") || player.hasPermission("*"))) {
             ComponentBuilder message = new ComponentBuilder("Insufficient permission. If you believe this is an error, contact inventor02.").color(ChatColor.RED);
 
             player.sendMessage(message.create());
