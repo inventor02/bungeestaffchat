@@ -50,7 +50,7 @@ public class StaffChatCommand extends Command {
         }
 
         for(ProxiedPlayer proxiedPlayer : ProxyServer.getInstance().getPlayers()) {
-            if(proxiedPlayer.hasPermission("staffchat.staff")) {
+            if(proxiedPlayer.hasPermission("staffchat.staff") || proxiedPlayer.hasPermission("*")) {
                 TextComponent text1 = new TextComponent("[" + player.getServer().getInfo().getName() + "] " + player.getName() + ": " + builder.toString().trim());
                 text1.setColor(ChatColor.DARK_PURPLE);
 

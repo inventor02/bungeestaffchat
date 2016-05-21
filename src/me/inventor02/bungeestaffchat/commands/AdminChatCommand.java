@@ -49,7 +49,7 @@ public class AdminChatCommand extends Command {
         }
 
         for(ProxiedPlayer proxiedPlayer : ProxyServer.getInstance().getPlayers()) {
-            if(proxiedPlayer.hasPermission("staffchat.admin")) {
+            if(proxiedPlayer.hasPermission("staffchat.admin") || proxiedPlayer.hasPermission("*")) {
                 TextComponent text1 = new TextComponent("[" + player.getServer().getInfo().getName() + "] " + player.getName() + ": " + builder.toString().trim());
                 text1.setColor(ChatColor.RED);
 
