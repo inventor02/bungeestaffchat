@@ -34,8 +34,8 @@ public class AdminChatCommand extends Command {
             return;
         }
 
-        if(args.length < 2) {
-            ComponentBuilder message = new ComponentBuilder("/a [message]").color(ChatColor.DARK_PURPLE);
+        if(args.length < 1) {
+            ComponentBuilder message = new ComponentBuilder("Usage: /a [message]").color(ChatColor.RED);
 
             player.sendMessage(message.create());
 

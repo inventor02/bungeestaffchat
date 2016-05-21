@@ -35,8 +35,8 @@ public class StaffChatCommand extends Command {
             return;
         }
 
-        if(args.length < 2) {
-            ComponentBuilder message = new ComponentBuilder("/s [message]").color(ChatColor.DARK_PURPLE);
+        if(args.length < 1) {
+            ComponentBuilder message = new ComponentBuilder("Usage: /s [message]").color(ChatColor.RED);
 
             player.sendMessage(message.create());
 
@@ -52,7 +52,7 @@ public class StaffChatCommand extends Command {
         for(ProxiedPlayer proxiedPlayer : ProxyServer.getInstance().getPlayers()) {
             if(proxiedPlayer.hasPermission("staffchat.staff")) {
                 TextComponent text1 = new TextComponent("[" + player.getServer().getInfo().getName() + "] " + player.getName() + ": " + builder.toString().trim());
-                text1.setColor(ChatColor.DARK_GREEN);
+                text1.setColor(ChatColor.DARK_PURPLE);
 
                 proxiedPlayer.sendMessage(text1);
             }
